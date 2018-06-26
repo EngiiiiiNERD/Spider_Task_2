@@ -1,0 +1,30 @@
+<% include partials/header %>          
+                
+       <div class="container" style="padding-top:100px;">
+       <header class="jumbotron">
+       <h1 style="text-align:center;">FINISHED TASK</h1>
+       </header>
+       </div>
+       <div class="container" style="padding-top:80px;">
+             <h3 style="text-align:center;">
+                 <img style="height:50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB-ZFCqQ0yt_IvuaQYP5zSwEyl7Cik9VxobF4hcICMSBXx0kGFzA">
+                 <%= newname.userinfo %> 
+             </h3>
+       </div>
+        <% z.finishedtask.forEach(function(inf){ %>
+        <div style="background:#e9ecef;" class="container">
+        <h3> <%= inf.newtitle %>  </h3>
+       
+        
+        <div>
+        <span> <style="background:#de6870; padding:5px; float:left;"><b>Created On :- </b> <%= inf.newnotes %>  </span>    
+                 
+            <button type="submit" class="btn btn-outline-success">TASK COMPLETED !</button>
+                 
+        </div>
+        <hr>
+        </div>
+        
+        <%});%>
+       </body>
+</html>

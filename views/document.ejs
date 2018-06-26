@@ -1,0 +1,10 @@
+<h1>Here are your notes!</h1>
+
+<p><%= name.userinfo %></p>
+
+      <% y.usernotes.forEach(function(inf){ %>
+        
+        <h3> <%= inf.title %>  </h3>
+        <li> <%= inf.notes %>  </li>
+        <hr>
+      <% }); %>

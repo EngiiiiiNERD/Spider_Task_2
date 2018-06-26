@@ -1,0 +1,30 @@
+<% include partials/header %>          
+                <div class="container" style="padding-top:100px;">
+                <header class="jumbotron">
+                <h1 style="text-align:center;">REGISTERED USERS</h1>
+                </header>
+                </div>
+                <div class="container" style="width: 50%; margin:0 auto; background:#e9ecef; padding:50px;" >
+                    <% data.forEach(function(users){%>
+                    <h3><%= users.userinfo %></h3>
+                     <p style="background: #de6870; padding:5px; color:white;"  >
+                         Time Of Creation :- <%= users.timeOfCreation %>
+                     </p>
+                     <form action="/check" method="POST">
+                         <input type="hidden" value="<%=users.userinfo%>"  name="x">
+                         <button class="btn btn-outline-dark">Create My To-Do List</button>
+                          
+                    </form>
+                    <hr>
+                    <%});%>          
+                
+                </div>
+                <div style="padding:30px;"></div>
+           </body>
+</html>
+
+
+
+
+
+

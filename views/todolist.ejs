@@ -1,0 +1,47 @@
+<% include partials/header %>          
+                
+       <div class="container" style="padding-top:100px;">
+       <header class="jumbotron">
+       <h1 style="text-align:center;">To-Do List</h1>
+       </header>
+       </div>
+       <div class="container" style="padding-top:80px;">
+             <h3 style="text-align:center;">
+                 <img style="height:50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB-ZFCqQ0yt_IvuaQYP5zSwEyl7Cik9VxobF4hcICMSBXx0kGFzA">
+                 <%= y.userinfo %> 
+             </h3>
+       </div>
+        <% y.usernotes.forEach(function(inf){ %>
+        <div style="background:#e9ecef;" class="container">
+        <h3> <%= inf.title %>  </h3>
+        <h6> <%= inf._id %> </h6>
+        
+        <div>
+        <span> <style="background:#de6870; padding:5px; float:left;"><b>Created On :- </b> <%= inf.notes %>  </span>    
+                 
+                 <form action="/updatetodo" method="POST">
+                       <input type="hidden" name="todoId" value="<%= inf._id %>">
+                       <input type="hidden" value="<%= y.userinfo %>" name="username" >
+                       <input type="hidden" value="<%= inf._id %>" name="userid" >
+                       <input type="hidden" value="true" name="status" > 
+                       <input type="hidden" id="date" value=" <%= inf.notes %>" name="date">
+                       <input type="hidden" value="<%= inf.title %>" name="title">
+                       <span>
+                           <button type="submit" class="btn btn-outline-danger">MARK AS COMPLETED !</button>
+                       </span>                 
+                 </form>
+        </div>
+        <hr>
+        </div>
+        
+        <%});%>
+        <form action="/refreshToDo" method="POST">
+            <input type="hidden" value="<%= y.userinfo %>" name="username" >
+            <input type="hidden" value="<%= y.userinfo %>" name="username" >
+            <button>Refresh !</button>
+        </form>
+       </body>
+</html>
+
+
+

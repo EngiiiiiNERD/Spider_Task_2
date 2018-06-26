@@ -1,0 +1,40 @@
+<% include partials/header %>          
+                
+       <div class="container" style="padding-top:100px;">
+       <header class="jumbotron">
+       <h1 style="text-align:center;">QUICK ADD TASK</h1>
+       </header>
+       </div>
+       <div class="container" style="padding-top:100px;">
+             <h3 style="text-align:center;">
+                 <img style="height:50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB-ZFCqQ0yt_IvuaQYP5zSwEyl7Cik9VxobF4hcICMSBXx0kGFzA">
+                 <%=x[0].userinfo %> 
+             </h3>
+       </div>
+
+
+<div class="container" style="width: 30%; margin:0 auto; background:#e9ecef; padding:50px;" >
+<form action="/home/<%= x[0]._id %> "  method="POST">
+         
+          <input type="hidden" value="<%= x[0].userinfo %>" name="username" >
+          <input type="hidden" value="<%= x[0]._id %>" name="userid" >
+          <input type="hidden" value="false" name="status" >
+          
+          <input type="hidden" id="date" name="date">
+               <script type="text/javascript">
+                    document.getElementById('date').value = Date();
+               </script>
+           
+        <div class="form-group">
+        <input class="form-control" type="text" name="title" placeholder="Quickly add task">
+        </div>
+        <div class="form-group">
+        <button class="btn btn-large btn-primary btn-block">Add task !</button>
+        </div>
+        
+</form>
+</div>
+<div style="padding:30px;"></div>
+</body>
+</html>
+
